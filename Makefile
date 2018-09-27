@@ -1,3 +1,5 @@
+include inc.mk
+
 PROJECT := Popcorn
 
 popcorn:
@@ -12,11 +14,13 @@ file: popcorn
 print:
 	@echo My project is called $(PROJECT).
 
+	@echo $(INCLUDE_TEXT)
+
 install:
 	npm install -g sass
 
-compile: file install
-	sass popcorn/style.scss popcorn/style.css
+compile: popcorn/style.scss
+	sass $< popcorn/style.css
 
 clean: popcorn file
 	rm -rf popcorn/
