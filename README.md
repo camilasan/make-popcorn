@@ -169,6 +169,17 @@ This is from the include.
 
 WIP
 
+# :open_book: More on cooking
+
+- [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html)
+- [Building Web Applications with Make](https://www.smashingmagazine.com/2015/10/building-web-applications-with-make/)
+- [Making sense of front end build tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
+- [Make for Hipsters](https://mattandre.ws/2016/05/make-for-hipsters/)
+- [Javascript build tools and automation systems](https://hackernoon.com/javascript-build-tools-and-automation-systems-9589c5c91ebe)
+- [Make as a front end development build tool](https://eprev.org/2017/02/20/make-as-a-front-end-development-build-tool/)
+
+
+
 
 
 
