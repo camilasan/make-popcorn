@@ -31,22 +31,75 @@ make --version
 
 2. With the editor of choice, create a file called Makefile and save it the root of the folder of your Project of choice.
 
-In this step you can use your file manager or your shell program of choice to create the file. 
+In this step you can use your file manager or your shell program of choice to create the file. In for the sake of not messing up any existing project you might have, I would suggest to create an empty folder or project to continue with this tutorial.
 
 3. Pick the task you want to automate. For this tutorial, let's try to create a directory:
+```
+popcorn: 
+	mkdir popcorn
 
 ```
 
+4. Now execute in the shell program:
+
+```
+$ cd <project>
+$ make popcorn
 ```
 
+5. To verify that the directory was created, let's append  this to the Makefile:
+
+```
+list:
+	ls -la
+```
+
+6.Now execute in the shell program:
+
+```
+$ make list
+```
+
+The output should list the files and directories in the current folder including the just created directory ```popcorn```.
 
 
+6. Topping
+
+6.1 Append to the Makefile:
+
+```
+file: 
+	touch popcorn/style.scss
+```
+
+6.2 Execute in the shell program:
+```
+$ make file
+```
+
+7. How to mix the ingredients
+
+```
+target: prerequisite
+  commands
+```
+
+- The target is what we reference when running the command make <target>.
+- Prerequisites are the dependencies for the target. The target cannot be built successfully without the dependencies first being resolved.
+-  If the target or any of its prerequisite files are out of date or missing, then the commands for that target will be executed. Make uses the modification timestamp to avoid duplicate processing. If the timestamp of the dependent files is older than the resulting output, then running Make won’t do anything. 
+- The commands are what you want to execute when given an specific target.
+
+8. Let the mix rest and think about how to answer to the following questions:
+
+8.1 If we want the step 6.1 to succeed: how do we make sure the directory ```popcorn``` exists before creating the .scss file in it?
+8.2 How would you create a target to compile the .scss file to .css? How would you
+8.3 How would you create a target to install vue via npm?
 
 # Nutrition Facts
 
 1. Make is a build automation tool that automatically builds executable programs and libraries from source code by reading files called Makefiles which specify how to derive the target program. 
 
-2. Make was originally designed to automate the build process of compiled languages (code -> binary) but since the "advent" of web development and the infinite numbers of Javascript frameworks it s use had been expanded to so much more. 
+2. Make was originally designed to automate the build process of compiled languages (code -> binary) but since the "advent" of web development and the infinite numbers of Javascript frameworks its use had been expanded to so much more. 
 
 3. Make commands are structured shell scripts with extra syntactical sugar. In other words, make can execute any command you would usually execute directly in your shell program.
 
