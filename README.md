@@ -62,8 +62,6 @@ $ make list
 
 The output should list the files and directories in the current folder including the just created directory ```popcorn```.
 
-
-
 7. Topping
 
 - Append to the Makefile:
@@ -79,6 +77,7 @@ $ make file
 
 8. How to mix the ingredients
 
+A simple makefile consists of "rules" with the following shape:
 ```
 target: prerequisite
   commands
@@ -90,7 +89,7 @@ target: prerequisite
 - The commands are what you want to execute when given an specific target.
 	
 9. Let the mix rest and think about how to answer to the following questions:
-- If we want the step 6 to succeed: how do we make sure the directory popcorn exists before creating the .scss file in it?
+- If we want the step 7 to succeed: how do we make sure the directory popcorn exists before creating the .scss file in it?
 - How would you create a target to compile the .scss file to .css? How would you
 - How would you create a target to install vue via npm?
 
@@ -106,7 +105,6 @@ print:
 
 11. Make provided pre cooked variables to make things easier. They are called automatic variables:
 
-- $@ The file name of the target of the rule. 
 - $< first prerequisite
 - $^ list of prerequisites
 - $? list of prerequisites that have changed
@@ -123,6 +121,27 @@ compile: popcorn/style.scss
 	sass $< popcorn/style.css
 ```
 
+12. Includes might make it tastier.
+
+When you need to separate large pieces of logic, besides using [functions](https://www.gnu.org/software/make/manual/html_node/Call-Function.html) you can consider to use includes. For achive it you need to create a file with the extension .mk.
+
+- Create a file called inc.mk.
+- Edit inc.mk:
+```
+INCLUDE_TEXT := This is from the include.
+```
+
+- And then in the Makefile append to the target print:
+```
+@echo $(INCLUDE_TEXT)
+```
+- Now if you execute the target print the output is:
+
+```
+$ make print
+My project is called Popcorn.
+This is from the include.
+```
 
 # Nutrition Facts
 
@@ -143,6 +162,12 @@ compile: popcorn/style.scss
 8. Make is platform specific. This is a complication for compiled programming language.
 
 9. Because it is platform specific, cmake was created. cmake is a software that generates Makefiles for the specified platform.
+
+10. "It takes too long to compile." - when we are talking about compiled languages, it might mean too many source files or dependencies. See (Writing makefiles)[https://www.cs.bu.edu/teaching/cpp/writing-makefiles/].
+
+# Conclusion
+
+WIP
 
 
 
