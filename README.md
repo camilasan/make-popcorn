@@ -121,7 +121,7 @@ compile: popcorn/style.scss
 	sass $< popcorn/style.css
 ```
 
-:ice_cream: 12. Includes might make it tastier.
+### :ice_cream: 12. Includes might make it tastier.
 
 When you need to separate large pieces of logic, besides using [functions](https://www.gnu.org/software/make/manual/html_node/Call-Function.html) you can consider to use includes. For achive it you need to create a file with the extension .mk.
 
