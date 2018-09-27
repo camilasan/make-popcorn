@@ -3,7 +3,7 @@ This is a beginner's make tutorial.
 
 # Ingredients
 
-Today's chef suggestion is to create a folder and list its files in it. The topping for it could be to create a scss file and use sass to compile it to css or to start a Vue project from scratch and using npm to install it. 
+Today's chef suggestion is to create a folder and list the files in it using Make. The topping for it could be to create a scss file and use sass to compile it to css or to start a Vue project from scratch and using npm to install it. 
 
 For that you will need:
 - 1 Computer to taste
@@ -54,7 +54,7 @@ list:
 	ls -la
 ```
 
-6.Now execute in the shell program:
+6. Now execute in the shell program:
 
 ```
 $ make list
@@ -63,21 +63,21 @@ $ make list
 The output should list the files and directories in the current folder including the just created directory ```popcorn```.
 
 
-6. Topping
 
-6.1 Append to the Makefile:
+7. Topping
+
+- Append to the Makefile:
 
 ```
 file: 
 	touch popcorn/style.scss
 ```
-
-6.2 Execute in the shell program:
+- Execute in the shell program:
 ```
 $ make file
 ```
 
-7. How to mix the ingredients
+8. How to mix the ingredients
 
 ```
 target: prerequisite
@@ -88,12 +88,41 @@ target: prerequisite
 - Prerequisites are the dependencies for the target. The target cannot be built successfully without the dependencies first being resolved.
 -  If the target or any of its prerequisite files are out of date or missing, then the commands for that target will be executed. Make uses the modification timestamp to avoid duplicate processing. If the timestamp of the dependent files is older than the resulting output, then running Make won’t do anything. 
 - The commands are what you want to execute when given an specific target.
+	
+9. Let the mix rest and think about how to answer to the following questions:
+- If we want the step 6 to succeed: how do we make sure the directory popcorn exists before creating the .scss file in it?
+- How would you create a target to compile the .scss file to .css? How would you
+- How would you create a target to install vue via npm?
 
-8. Let the mix rest and think about how to answer to the following questions:
+You may find some of the answers [here](https://github.com/camilasan/make-popcorn/blob/master/Makefile). 
 
-8.1 If we want the step 6.1 to succeed: how do we make sure the directory ```popcorn``` exists before creating the .scss file in it?
-8.2 How would you create a target to compile the .scss file to .css? How would you
-8.3 How would you create a target to install vue via npm?
+10. For some extra taste you can add variables:
+```
+PROJECT := Popcorn
+
+print:
+	@echo My project is called $(PROJECT).
+```
+
+11. Make provided pre cooked variables to make things easier. They are called automatic variables:
+
+- $@ The file name of the target of the rule. 
+- $< first prerequisite
+- $^ list of prerequisites
+- $? list of prerequisites that have changed
+- $@ target name
+
+On this mix:
+```
+compile: popcorn/style.scss
+	sass popcorn/style.scss popcorn/style.css
+```
+You can replace popcorn/style.scss for $<:
+```
+compile: popcorn/style.scss
+	sass $< popcorn/style.css
+```
+
 
 # Nutrition Facts
 
@@ -109,7 +138,13 @@ target: prerequisite
 
 6. Make was originally created by Stuart Feldman in April 1976 at Bell Labs. He was inspired to write Make by the experience of a coworker in futilely debugging a program of his where the executable was accidentally not being updated with changes.
 
-7. In the beginning there was only a software called Make but then later due to its popularity Unix included Make as part of the default installation. I believe that is why it is called GNU Make.
+7. In the beginning there was only a software called Make but then later due to its popularity Unix included Make as part of the default installation (I believe that is why it is called GNU Make?)
+
+8. Make is platform specific. This is a complication for compiled programming language.
+
+9. Because it is platform specific, cmake was created. cmake is a software that generates Makefiles for the specified platform.
+
+
 
 
 
