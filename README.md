@@ -163,7 +163,7 @@ This is from the include.
 
 9. Because it is platform specific, cmake was created. cmake is a software that generates Makefiles for the specified platform.
 
-10. "It takes too long to compile." - when we are talking about compiled languages, it might mean too many source files or dependencies. See (Writing makefiles)[https://www.cs.bu.edu/teaching/cpp/writing-makefiles/].
+10. "It takes too long to compile." - when we are talking about compiled languages, it might mean too many source files or dependencies. See [Writing makefiles](https://www.cs.bu.edu/teaching/cpp/writing-makefiles/).
 
 # Conclusion
 
