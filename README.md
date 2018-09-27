@@ -62,7 +62,7 @@ $ make list
 
 The output should list the files and directories in the current folder including the just created directory ```popcorn```.
 
-:doughnut: :cherries: 7. Topping 
+:doughnut: 7. Topping 
 
 - Append to the Makefile:
 
@@ -95,7 +95,7 @@ target: prerequisite
 
 You may find some of the answers [here](https://github.com/camilasan/make-popcorn/blob/master/Makefile). 
 
-10. For some extra taste you can add variables:
+:honey_pot: 10. For some extra taste you can add variables:
 ```
 PROJECT := Popcorn
 
@@ -103,7 +103,7 @@ print:
 	@echo My project is called $(PROJECT).
 ```
 
-11. Make provided pre cooked variables to make things easier. They are called automatic variables:
+:candy: 11. Make provided pre cooked variables to make things easier. They are called automatic variables:
 
 - $< first prerequisite
 - $^ list of prerequisites
