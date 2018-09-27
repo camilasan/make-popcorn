@@ -1,7 +1,7 @@
-# make popcorn 
+# :popcorn: make popcorn 
 This is a beginner's make tutorial.
 
-# Ingredients
+# :cookie: Ingredients 
 
 Today's chef suggestion is to create a folder and list the files in it using Make. The topping for it could be to create a scss file and use sass to compile it to css or to start a Vue project from scratch and using npm to install it. 
 
@@ -16,7 +16,7 @@ For that you will need:
 - 1 Task to automate to taste. 
 
 
-## Directions
+## :woman_cook: Directions
 
 1. Open your shell program of choice.
 
@@ -62,7 +62,7 @@ $ make list
 
 The output should list the files and directories in the current folder including the just created directory ```popcorn```.
 
-7. Topping
+:doughnut: :cherries: 7. Topping 
 
 - Append to the Makefile:
 
@@ -75,7 +75,7 @@ file:
 $ make file
 ```
 
-8. How to mix the ingredients
+:cake: 8. How to mix the ingredients
 
 A simple makefile consists of "rules" with the following shape:
 ```
@@ -110,18 +110,18 @@ print:
 - $? list of prerequisites that have changed
 - $@ target name
 
-On this mix:
+- On this mix:
 ```
 compile: popcorn/style.scss
 	sass popcorn/style.scss popcorn/style.css
 ```
-You can replace popcorn/style.scss for $<:
+- You can replace popcorn/style.scss for $<:
 ```
 compile: popcorn/style.scss
 	sass $< popcorn/style.css
 ```
 
-12. Includes might make it tastier.
+:ice_cream: 12. Includes might make it tastier.
 
 When you need to separate large pieces of logic, besides using [functions](https://www.gnu.org/software/make/manual/html_node/Call-Function.html) you can consider to use includes. For achive it you need to create a file with the extension .mk.
 
@@ -143,7 +143,7 @@ My project is called Popcorn.
 This is from the include.
 ```
 
-# Nutrition Facts
+# :plate_with_cutlery: Nutrition Facts
 
 1. Make is a build automation tool that automatically builds executable programs and libraries from source code by reading files called Makefiles which specify how to derive the target program. 
 
@@ -165,7 +165,7 @@ This is from the include.
 
 10. "It takes too long to compile." - when we are talking about compiled languages, it might mean too many source files or dependencies. See [Writing makefiles](https://www.cs.bu.edu/teaching/cpp/writing-makefiles/).
 
-# Conclusion
+# :tada: Conclusion
 
 WIP
 
