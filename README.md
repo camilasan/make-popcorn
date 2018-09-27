@@ -63,6 +63,7 @@ $ make list
 The output should list the files and directories in the current folder including the just created directory ```popcorn```.
 
 
+
 6. Topping
 
 6.1 Append to the Makefile:
@@ -88,12 +89,16 @@ target: prerequisite
 - Prerequisites are the dependencies for the target. The target cannot be built successfully without the dependencies first being resolved.
 -  If the target or any of its prerequisite files are out of date or missing, then the commands for that target will be executed. Make uses the modification timestamp to avoid duplicate processing. If the timestamp of the dependent files is older than the resulting output, then running Make won’t do anything. 
 - The commands are what you want to execute when given an specific target.
+	
 
 8. Let the mix rest and think about how to answer to the following questions:
 
 8.1 If we want the step 6.1 to succeed: how do we make sure the directory ```popcorn``` exists before creating the .scss file in it?
 8.2 How would you create a target to compile the .scss file to .css? How would you
 8.3 How would you create a target to install vue via npm?
+
+You may find some of the answers [here](https://github.com/camilasan/make-popcorn/blob/master/Makefile). 
+
 
 # Nutrition Facts
 
